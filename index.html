@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TAC AI Hub</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal: #108474;
+      --yellow: #fcbd00;
+      --black: #151515;
+      --charcoal: #333333;
+      --gray: #7B7B7B;
+      --border: #d1d1d1;
+      --bg-light: #f9fafb;
+      --white: #ffffff;
+      --font: "ITC Avant Garde Gothic Std", "Outfit", Arial, sans-serif;
+    }
+
+    body {
+      font-family: var(--font);
+      color: var(--charcoal);
+      background: var(--white);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--black);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .nav-brand {
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-brand span {
+      color: var(--yellow);
+    }
+
+    nav a.gov-link {
+      color: var(--gray);
+      font-size: 13px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.15s;
+    }
+
+    nav a.gov-link:hover { color: var(--yellow); }
+
+    /* HERO */
+    .hero {
+      background: var(--teal);
+      color: var(--white);
+      padding: 72px 40px 64px;
+    }
+
+    .hero-inner {
+      max-width: 800px;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      max-width: 560px;
+      opacity: 0.88;
+      line-height: 1.65;
+    }
+
+    /* MAIN */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 64px 40px 80px;
+    }
+
+    /* SECTION LABEL */
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 24px;
+    }
+
+    /* TOOL GRID */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 72px;
+    }
+
+    .tool-card {
+      border: 1px solid var(--border);
+      background: var(--white);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .tool-card:hover {
+      border-color: var(--teal);
+      box-shadow: 0 2px 12px rgba(16, 132, 116, 0.1);
+    }
+
+    .tool-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .tool-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.3;
+    }
+
+    .badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      flex-shrink: 0;
+    }
+
+    .badge-live {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .badge-progress {
+      background: var(--yellow);
+      color: var(--black);
+    }
+
+    .tool-desc {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .tool-meta {
+      font-size: 12px;
+      color: var(--gray);
+      letter-spacing: 0.03em;
+    }
+
+    .tool-meta strong {
+      color: var(--charcoal);
+    }
+
+    .tool-link {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--teal);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .tool-link:hover { border-color: var(--teal); }
+
+    /* PRINCIPLES */
+    .principles {
+      background: var(--bg-light);
+      padding: 40px;
+      margin-bottom: 0;
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 32px;
+      margin-top: 24px;
+    }
+
+    .principle h3 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+
+    .principle p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* GOV CTA */
+    .gov-cta {
+      margin-top: 48px;
+      padding: 28px 32px;
+      border-left: 3px solid var(--yellow);
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .gov-cta p {
+      font-size: 14px;
+      color: var(--charcoal);
+      max-width: 500px;
+    }
+
+    .gov-cta a {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--black);
+      text-decoration: none;
+      padding: 12px 24px;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+
+    .gov-cta a:hover { background: var(--teal); }
+
+    /* FOOTER */
+    footer {
+      background: var(--black);
+      color: var(--gray);
+      font-size: 13px;
+      text-align: center;
+      padding: 24px 40px;
+      letter-spacing: 0.03em;
+    }
+
+    footer span { color: var(--yellow); }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      .hero { padding: 48px 20px; }
+      .hero h1 { font-size: 28px; }
+      main { padding: 48px 20px 64px; }
+      .principles { padding: 32px 20px; }
+      .gov-cta { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="/">TAC <span>AI</span> Hub</a>
+    <a class="gov-link" href="/governance.html">Governance</a>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Internal Tools — The ABS Company</div>
+      <h1>One home for every AI tool we build.</h1>
+      <p>Three tools live. More coming. This is where we keep them visible, secure, and accountable as AI becomes part of how we work.</p>
+    </div>
+  </div>
+
+  <main>
+    <div class="section-label">Tool Registry</div>
+
+    <div class="tools-grid">
+
+      <div class="tool-card">
+        <div class="tool-header">
+          <div class="tool-name">Employee Recognition</div>
+          <span class="badge badge-live">Live</span>
+        </div>
+        <div class="tool-desc">Peer recognition and appreciation tool for the team. Built to celebrate wins and keep morale visible.</div>
+        <div class="tool-meta"><strong>Builder:</strong> Alexia Petrakos</div>
+
+        <a class="tool-link" href="https://mission-champion-hub.vercel.app/auth" target="_blank" rel="noopener">Open tool &rarr;</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-header">
+          <div class="tool-name">Learning Hub</div>
+          <span class="badge badge-progress">In Progress</span>
+        </div>
+        <div class="tool-desc">Internal learning management system for team training and resources. Centralizes what the team needs to grow.</div>
+        <div class="tool-meta"><strong>Builder:</strong> Eleni Gagnon</div>
+        <a class="tool-link" href="https://the-abs-company-lms.vercel.app" target="_blank" rel="noopener">Open tool &rarr;</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-header">
+          <div class="tool-name">Gym Route Builder</div>
+          <span class="badge badge-live">Live</span>
+        </div>
+        <div class="tool-desc">Optimized daily route planning for sales reps visiting gym accounts. Cuts drive time, increases visits.</div>
+        <div class="tool-meta"><strong>Builder:</strong> Ryan Healey</div>
+        <a class="tool-link" href="https://tacgymfinder.netlify.app/" target="_blank" rel="noopener">Open tool &rarr;</a>
+      </div>
+
+    </div>
+
+    <div class="section-label">How We Operate</div>
+
+    <div class="principles">
+      <div class="principles-grid">
+        <div class="principle">
+          <h3>Build freely</h3>
+          <p>No approval required to start building. Experimentation is encouraged at every level.</p>
+        </div>
+        <div class="principle">
+          <h3>Deploy visibly</h3>
+          <p>If it's live and in use, it lives on this page. Visibility is the accountability mechanism.</p>
+        </div>
+        <div class="principle">
+          <h3>Access responsibly</h3>
+          <p>Company data and systems require the same care in code as in any other context.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gov-cta">
+      <p>All tools built under the TAC AI Hub follow a shared governance framework covering authentication, data handling, and deployment standards.</p>
+      <a href="/governance.html">Read Governance Rules</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>TAC AI Hub &mdash; <span>The ABS Company</span> &mdash; Internal Use Only</p>
+  </footer>
+
+</body>
+</html>

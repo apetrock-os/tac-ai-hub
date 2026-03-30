@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Governance — TAC AI Hub</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal: #108474;
+      --yellow: #fcbd00;
+      --black: #151515;
+      --charcoal: #333333;
+      --gray: #7B7B7B;
+      --border: #d1d1d1;
+      --bg-light: #f9fafb;
+      --white: #ffffff;
+      --font: "ITC Avant Garde Gothic Std", "Outfit", Arial, sans-serif;
+    }
+
+    body {
+      font-family: var(--font);
+      color: var(--charcoal);
+      background: var(--white);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--black);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .nav-brand {
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-brand span { color: var(--yellow); }
+
+    nav a.back-link {
+      color: var(--gray);
+      font-size: 13px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.15s;
+    }
+
+    nav a.back-link:hover { color: var(--yellow); }
+
+    /* HERO */
+    .hero {
+      background: var(--black);
+      color: var(--white);
+      padding: 64px 40px 56px;
+    }
+
+    .hero-inner { max-width: 800px; }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      max-width: 520px;
+      opacity: 0.75;
+      line-height: 1.65;
+    }
+
+    /* MAIN */
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 64px 40px 80px;
+    }
+
+    /* RULES */
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 32px;
+    }
+
+    .rules-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 64px;
+    }
+
+    .rule {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 24px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .rule:first-child { border-top: 1px solid var(--border); }
+
+    .rule-number {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--teal);
+      padding-top: 3px;
+    }
+
+    .rule-body h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .rule-body p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.65;
+    }
+
+    /* INTENT BLOCK */
+    .intent {
+      background: var(--bg-light);
+      padding: 40px;
+      border-left: 3px solid var(--teal);
+      margin-bottom: 48px;
+    }
+
+    .intent h2 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--black);
+      margin-bottom: 12px;
+    }
+
+    .intent p {
+      font-size: 15px;
+      color: var(--charcoal);
+      line-height: 1.7;
+    }
+
+    /* OWNER BLOCK */
+    .owner-block {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 28px 32px;
+      border: 1px solid var(--border);
+    }
+
+    .owner-marker {
+      width: 4px;
+      height: 100%;
+      background: var(--yellow);
+      flex-shrink: 0;
+      align-self: stretch;
+      min-height: 40px;
+    }
+
+    .owner-block-inner p {
+      font-size: 14px;
+      color: var(--charcoal);
+      line-height: 1.65;
+    }
+
+    .owner-block-inner p + p {
+      margin-top: 8px;
+      color: var(--gray);
+      font-size: 13px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--black);
+      color: var(--gray);
+      font-size: 13px;
+      text-align: center;
+      padding: 24px 40px;
+      letter-spacing: 0.03em;
+    }
+
+    footer span { color: var(--yellow); }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      .hero { padding: 48px 20px; }
+      .hero h1 { font-size: 26px; }
+      main { padding: 48px 20px 64px; }
+      .rule { grid-template-columns: 36px 1fr; gap: 16px; }
+      .intent { padding: 28px 20px; }
+      .owner-block { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="/">TAC <span>AI</span> Hub</a>
+    <a class="back-link" href="/">&larr; Back to Hub</a>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">TAC AI Hub — Governance</div>
+      <h1>How we build safely.</h1>
+      <p>These rules exist not to slow people down, but to make sure the tools we build are ones we can stand behind — as a team and as a company.</p>
+    </div>
+  </div>
+
+  <main>
+
+    <div class="intent">
+      <h2>The goal</h2>
+      <p>We want a culture where building is encouraged and trust is earned. These rules are the minimum required to keep our tools secure, our data protected, and our team accountable to each other. Nothing here requires approval to start — only care in how you build.</p>
+    </div>
+
+    <div class="section-label">Rules</div>
+
+    <div class="rules-list">
+
+      <div class="rule">
+        <div class="rule-number">01</div>
+        <div class="rule-body">
+          <h3>Domain-locked authentication</h3>
+          <p>Any tool using Google Workspace or HubSpot login must restrict access to @theabscompany.com accounts only. No personal accounts, no open access.</p>
+        </div>
+      </div>
+
+      <div class="rule">
+        <div class="rule-number">02</div>
+        <div class="rule-body">
+          <h3>HubSpot permissions respected</h3>
+          <p>Tools built on HubSpot cannot exceed the builder's own permission level. No tool should access, read, or write data beyond what the builder is authorized to do manually.</p>
+        </div>
+      </div>
+
+      <div class="rule">
+        <div class="rule-number">03</div>
+        <div class="rule-body">
+          <h3>No hardcoded credentials</h3>
+          <p>API keys, tokens, and passwords must never be written into source code. Use environment variables. This applies to every tool regardless of how simple it seems.</p>
+        </div>
+      </div>
+
+      <div class="rule">
+        <div class="rule-number">04</div>
+        <div class="rule-body">
+          <h3>No unauthorized data egress</h3>
+          <p>Company data must not be sent to third-party APIs or external services without explicit sign-off. When in doubt, ask before connecting.</p>
+        </div>
+      </div>
+
+      <div class="rule">
+        <div class="rule-number">05</div>
+        <div class="rule-body">
+          <h3>Public URLs get logged</h3>
+          <p>If a tool is deployed and accessible via a public URL, it must be listed on the hub. No dark deployments. Visibility is the accountability mechanism.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="owner-block">
+      <div class="owner-marker"></div>
+      <div class="owner-block-inner">
+        <p><strong>Owner:</strong> Alexia Petrakos &mdash; questions about these rules or new tool submissions go here.</p>
+        <p>This framework is being reviewed and refined with Chris Carolan's team. Future tools will be onboarded with consistent auth patterns, versioning standards, and documentation.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>TAC AI Hub &mdash; <span>The ABS Company</span> &mdash; Internal Use Only</p>
+  </footer>
+
+</body>
+</html>
