@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit a Tool — TAC AI Hub</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal: #108474;
+      --yellow: #fcbd00;
+      --black: #151515;
+      --charcoal: #333333;
+      --gray: #7B7B7B;
+      --border: #d1d1d1;
+      --bg-light: #f9fafb;
+      --white: #ffffff;
+      --font: "ITC Avant Garde Gothic Std", "Outfit", Arial, sans-serif;
+    }
+
+    body {
+      font-family: var(--font);
+      color: var(--charcoal);
+      background: var(--white);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    nav {
+      background: var(--black);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .nav-brand {
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-brand span { color: var(--yellow); }
+
+    nav a.back-link {
+      color: var(--gray);
+      font-size: 13px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.15s;
+    }
+
+    nav a.back-link:hover { color: var(--yellow); }
+
+    .hero {
+      background: var(--teal);
+      color: var(--white);
+      padding: 64px 40px 56px;
+    }
+
+    .hero-inner { max-width: 800px; }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      max-width: 500px;
+      opacity: 0.88;
+      line-height: 1.65;
+    }
+
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 64px 40px 80px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    label .required {
+      color: var(--teal);
+      margin-left: 2px;
+    }
+
+    input, textarea, select {
+      font-family: var(--font);
+      font-size: 15px;
+      color: var(--charcoal);
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      padding: 12px 14px;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.15s;
+      appearance: none;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--teal);
+      background: var(--white);
+    }
+
+    textarea { resize: vertical; min-height: 100px; }
+
+    .hint {
+      font-size: 12px;
+      color: var(--gray);
+      margin-top: -4px;
+    }
+
+    .submit-btn {
+      font-family: var(--font);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--black);
+      border: none;
+      padding: 16px 32px;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background 0.15s;
+    }
+
+    .submit-btn:hover { background: var(--teal); }
+
+    footer {
+      background: var(--black);
+      color: var(--gray);
+      font-size: 13px;
+      text-align: center;
+      padding: 24px 40px;
+      letter-spacing: 0.03em;
+    }
+
+    footer span { color: var(--yellow); }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      .hero { padding: 48px 20px; }
+      .hero h1 { font-size: 26px; }
+      main { padding: 48px 20px 64px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="/">TAC <span>AI</span> Hub</a>
+    <a class="back-link" href="/">&larr; Back to Hub</a>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">TAC AI Hub</div>
+      <h1>Submit a tool.</h1>
+      <p>Built something the team should know about? Get it listed. No approval needed to build — just visibility required to deploy.</p>
+    </div>
+  </div>
+
+  <main>
+    <form action="https://formspree.io/f/mlgobabq" method="POST">
+
+      <div class="field">
+        <label>Tool name <span class="required">*</span></label>
+        <input type="text" name="tool_name" placeholder="e.g. Gym Route Builder" required />
+      </div>
+
+      <div class="field">
+        <label>Your name <span class="required">*</span></label>
+        <input type="text" name="builder_name" placeholder="First and last name" required />
+      </div>
+
+      <div class="field">
+        <label>Your email <span class="required">*</span></label>
+        <input type="email" name="_replyto" placeholder="you@theabscompany.com" required />
+      </div>
+
+      <div class="field">
+        <label>Description <span class="required">*</span></label>
+        <textarea name="description" placeholder="What does this tool do? Who is it for?" required></textarea>
+      </div>
+
+      <div class="field">
+        <label>Public URL</label>
+        <input type="url" name="url" placeholder="https://" />
+        <span class="hint">Required if the tool is live and accessible.</span>
+      </div>
+
+      <div class="field">
+        <label>Status <span class="required">*</span></label>
+        <select name="status" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="Live">Live</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Prototype">Prototype</option>
+        </select>
+      </div>
+
+      <input type="hidden" name="_subject" value="New Tool Submission — TAC AI Hub" />
+      <input type="hidden" name="_next" value="/thank-you" />
+
+      <button class="submit-btn" type="submit">Submit Tool</button>
+
+    </form>
+  </main>
+
+  <footer>
+    <p>TAC AI Hub &mdash; <span>The ABS Company</span> &mdash; Internal Use Only</p>
+  </footer>
+
+</body>
+</html>

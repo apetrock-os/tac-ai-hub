@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submitted — TAC AI Hub</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal: #108474;
+      --yellow: #fcbd00;
+      --black: #151515;
+      --gray: #7B7B7B;
+      --white: #ffffff;
+      --font: "ITC Avant Garde Gothic Std", "Outfit", Arial, sans-serif;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    nav {
+      background: var(--black);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      height: 60px;
+    }
+
+    .nav-brand {
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-brand span { color: var(--yellow); }
+
+    .content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .inner { max-width: 480px; }
+
+    .check {
+      width: 48px;
+      height: 48px;
+      background: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+    }
+
+    .check svg { width: 24px; height: 24px; }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.65;
+      margin-bottom: 36px;
+    }
+
+    a {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--black);
+      text-decoration: none;
+      padding: 14px 28px;
+      display: inline-block;
+      transition: background 0.15s;
+    }
+
+    a:hover { background: var(--teal); }
+
+    footer {
+      background: var(--black);
+      color: var(--gray);
+      font-size: 13px;
+      text-align: center;
+      padding: 24px 40px;
+    }
+
+    footer span { color: var(--yellow); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="/">TAC <span>AI</span> Hub</a>
+  </nav>
+
+  <div class="content">
+    <div class="inner">
+      <div class="check">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="square">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+      <h1>Tool submitted.</h1>
+      <p>Alexia will review and get it added to the hub. Thanks for building.</p>
+      <a href="/">Back to Hub</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>TAC AI Hub &mdash; <span>The ABS Company</span> &mdash; Internal Use Only</p>
+  </footer>
+
+</body>
+</html>
